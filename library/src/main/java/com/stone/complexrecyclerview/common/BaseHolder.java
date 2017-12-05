@@ -36,10 +36,11 @@ public class BaseHolder extends RecyclerView.ViewHolder {
 
     /**
      * 构造ViewHolder
-     *
+     * 已废弃。因可能造成item的layoutParams中使用match_parent时，不能充满父布局
      * @param context
      * @param resId   布局资源文件id
      */
+    @Deprecated
     public BaseHolder(Context context, @LayoutRes int resId) {
         super(LayoutInflater.from(context).inflate(resId, null, false));
         mViewArray = new SparseArray<>();

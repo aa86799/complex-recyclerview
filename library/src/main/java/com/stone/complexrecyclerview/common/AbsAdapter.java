@@ -15,6 +15,8 @@ import java.util.List;
  *
  * extends RecyclerView.Adapter<BaseHolder>
  *
+ * 只能添加一个header和一个footer
+ *
  */
 
 public abstract class AbsAdapter<VH extends BaseHolder> extends RecyclerView.Adapter<BaseHolder> {
