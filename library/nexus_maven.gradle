@@ -3,6 +3,9 @@ apply plugin: 'maven'
 /*
 发布 ： https://docs.gradle.org/current/userguide/artifact_management.html
 https://docs.gradle.org/current/userguide/maven_plugin.html#uploading_to_maven_repositories
+
+当要执行上传时，对应于的Gradle任务：
+    Gradle projects: current-module > upload > uploadArchives
  */
 
 task androidJavadocs(type: Javadoc) {
