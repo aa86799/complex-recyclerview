@@ -1,0 +1,46 @@
+apply plugin: 'maven'
+
+/*
+发布 ： https://docs.gradle.org/current/userguide/artifact_management.html
+https://docs.gradle.org/current/userguide/maven_plugin.html#uploading_to_maven_repositories
+ */
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+artifacts {
+    archives androidSourcesJar
+//    archives androidJavadocsJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://localhost:8081/nexus/content/repositories/releases/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            snapshotRepository(url: "http://localhost:8081/nexus/content/repositories/snapshots/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            pom.project {
+                name 'ComplexRecyclerView'
+                groupId 'com.stone'
+                artifactId 'complex-recyclerView'
+                version '1.0.0'
+                packaging 'aar'
+            }
+        }
+    }
+}
