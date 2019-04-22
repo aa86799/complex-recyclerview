@@ -10,18 +10,19 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * desc  :
+ * desc  : 原子适配器。 各种可以含有 List<>数据的 子 adapter
  * author: stone
  * email : aa86799@163.com
  * time  : 14/06/2017 17 33
  */
+@SuppressWarnings("all")
 public abstract class BaseAtomAdapter<T> implements IAtomAdapter<BaseViewHolder> {
 
     private static final int TYPE_DEFAULT = generateKeyCode();
     private final int TYPE_HEADER = generateKeyCode();//has more BaseAtomAdapter, so can not declared to static
     private final int TYPE_FOOTER = generateKeyCode();
 
-    private List<T> mDataList = new ArrayList<>();
+    private List<T> mDataList;
     private RecyclerView.Adapter<BaseViewHolder> mParentAdapter;
     private View mHeaderView;
     private View mFooterView;

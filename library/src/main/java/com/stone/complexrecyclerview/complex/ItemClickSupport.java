@@ -1,9 +1,10 @@
-package com.stone.complexrecyclerview.common;
+package com.stone.complexrecyclerview.complex;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import com.stone.complexrecyclerview.R;
 
+@SuppressWarnings("all")
 public class ItemClickSupport {
     private final RecyclerView mRecyclerView;
     private OnItemClickListener mOnItemClickListener;
@@ -30,8 +31,9 @@ public class ItemClickSupport {
         }
     };
 
-    private RecyclerView.OnChildAttachStateChangeListener mAttachListener
-            = new RecyclerView.OnChildAttachStateChangeListener() {
+    private RecyclerView.OnChildAttachStateChangeListener mAttachListener =
+            new RecyclerView.OnChildAttachStateChangeListener() {
+
         @Override
         public void onChildViewAttachedToWindow(View view) {
             if (mOnItemClickListener != null) {

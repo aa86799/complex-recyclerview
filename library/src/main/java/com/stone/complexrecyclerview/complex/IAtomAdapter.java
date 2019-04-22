@@ -11,6 +11,7 @@ import android.view.ViewGroup;
  * email : aa86799@163.com
  * time  : 14/06/2017 16 57
  */
+@SuppressWarnings("all")
 public interface IAtomAdapter<VH extends RecyclerView.ViewHolder> {
 
     void setParentAdapter(RecyclerView.Adapter<VH> parentAdapter);

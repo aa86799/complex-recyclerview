@@ -8,6 +8,7 @@ import java.io.Serializable;
  * email : aa86799@163.com
  * time  : 14/06/2017 16 58
  */
+@SuppressWarnings("all")
 public class ComplexPosition implements Serializable {
 
     private int atomAdapterIndex; //in total Adapters

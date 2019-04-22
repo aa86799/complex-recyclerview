@@ -11,11 +11,12 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * desc  : the actual RecyclerView.Adapter
+ * desc  : the actual RecyclerView.Adapter。 外层Adapter，-- RV#Adapter
  * author: stone
  * email : aa86799@163.com
  * time  : 14/06/2017 20 07
  */
+@SuppressWarnings("all")
 public abstract class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     private static final int TYPE_DEFAULT = generateKeyCode();
@@ -83,7 +84,7 @@ public abstract class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseViewH
     }
 
     @Override
-    public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         BaseViewHolder viewHolder = null;
         if (viewType == TYPE_HEADER) {
             viewHolder = new SimpleViewHolder(mHeaderView);

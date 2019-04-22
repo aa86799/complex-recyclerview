@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.stone.complexrecyclerview.common.ItemClickSupport;
+import com.stone.complexrecyclerview.complex.ItemClickSupport;
 import com.stone.complexrecyclerview.complex.BaseAtomAdapter;
 import com.stone.complexrecyclerview.complex.BaseRecyclerAdapter;
 import com.stone.complexrecyclerview.complex.BaseViewHolder;

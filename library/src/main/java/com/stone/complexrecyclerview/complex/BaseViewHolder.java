@@ -14,6 +14,7 @@ import android.view.ViewGroup;
  * email : aa86799@163.com
  * time  : 14/06/2017 17 34
  */
+@SuppressWarnings("all")
 public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
 
     private ComplexPosition mComplexPosition;
@@ -41,7 +42,9 @@ public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
 
     public abstract void onBindViewHolder(ComplexPosition complexPosition);
 
-    public <T> T getViewById(@IdRes int resId) {
+
+    @SuppressWarnings("unchecked")
+    protected  <T> T getViewById(@IdRes int resId) {
         return (T) itemView.findViewById(resId);
     }
 }

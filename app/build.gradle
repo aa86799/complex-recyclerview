@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.stone.complexrecyclerview.example"
         minSdkVersion 14
@@ -17,6 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -26,5 +30,4 @@ dependencies {
     })
     testImplementation 'junit:junit:4.12'
     implementation project(':library')
-
 }
